@@ -3,5 +3,5 @@
   "scripts": {
     "build:css": "postcss"
   },
-  "plugins": []
+  "plugins": [["@snowpack/plugin-webpack", {}]]
 }
