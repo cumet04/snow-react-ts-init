@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+import { Octokit } from '@octokit/rest';
+const octokit = new Octokit();
+
+octokit.repos
+  .listForOrg({
+    org: 'octokit',
+    type: 'public',
+  })
+  .then(({ data }) => {
+    console.log(data.map((item) => item.full_name));
+  });
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
